@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  nodered:
+    image: nodered/node-red
+    container_name: nodered
+    ports:
+      - "1880:1880"
+    volumes:
+      - /home/orangepi/docker-setup/node-red/data:/data
+    restart: unless-stopped

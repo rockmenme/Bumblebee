@@ -1,0 +1,23 @@
+version: "3.8"
+
+services:
+  mopidy:
+    image: 192.168.1.187:30095/bumblebee-mopidy:arm64
+    container_name: mopidy
+    ports:
+      - "6680:6680"
+      - "6600:6600"
+    environment:
+      MUSIC_DIR_ENV: "/music/Startup"
+    volumes:
+      - ./config:/etc/mopidy
+      - ${MUSIC_DIR}:/music
+      - ./cache:/var/cache/mopidy
+      - ./data:/root/.local/share
+      # opțional:
+      # - ./playlists:/playlists
+    devices:
+      - "/dev/snd:/dev/snd"
+    group_add:
+      - "audio"
+    restart: unless-stopped

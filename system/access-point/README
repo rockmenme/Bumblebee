@@ -1,0 +1,7 @@
+hostapd.conf -> /etc/hostapd/hostapd.conf
+
+dnsmasq.conf -> /etc/dnsmasq.conf
+
+wlan0 -> /etc/network/interfaces.d/
+
+NetworkManager.conf -> /etc/NetworkManager/NetworkManager.conf
